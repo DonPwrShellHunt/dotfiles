@@ -1,5 +1,7 @@
 eval "$(oh-my-posh init zsh)"
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
-# should check to make sure path exists before sourcing
-source /Users/donhunt/.config/op/plugins.sh
+# add check to make sure path exists before sourcing
+if [[ -e /Users/donhunt/.config/op/plugins.sh ]]; then
+   source /Users/donhunt/.config/op/plugins.sh
+fi

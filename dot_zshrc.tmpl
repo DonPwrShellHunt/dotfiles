@@ -1,8 +1,8 @@
 {{- if eq .chezmoi.hostname "iMacM3" }}
-eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh --init --shell zsh --config /opt/homebrew/opt/oh-my-posh/themes/{{ .omp.theme }}.omp.json)"
 {{- end }}
 {{- if eq .chezmoi.hostname "Dons-MacBook-Pro" }}
-eval "$(oh-my-posh --init --shell zsh --config /opt/homebrew/opt/oh-my-posh/themes/craver.omp.json)"
+eval "$(oh-my-posh --init --shell zsh --config /opt/homebrew/opt/oh-my-posh/themes/{{ .omp.theme }}.omp.json)"
 {{- end }}
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch

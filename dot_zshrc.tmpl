@@ -1,3 +1,7 @@
+# Define psman function show man content with Preview
+function preman() {
+   mandoc -T pdf "$(/usr/bin/man -w $@)" | open -f -a Preview.app
+}
 # Use data.omp.theme from chezmoi.toml to set theme
 eval "$(oh-my-posh --init --shell zsh --config /opt/homebrew/opt/oh-my-posh/themes/{{ .omp.theme }}.omp.json)"
 # Don't require escaping globbing characters in zsh.

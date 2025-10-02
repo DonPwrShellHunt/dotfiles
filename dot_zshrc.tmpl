@@ -2,6 +2,13 @@
 function preman() {
    mandoc -T pdf "$(/usr/bin/man -w $@)" | open -f -a Preview.app
 }
+autoload -Uz compinit
+compinit
+# if uv is installed, source its env file and enable shell completions
+if [[ -f ~/.local/bin/env ]]; then
+   source ~/.local/bin/env
+   eval "$(uv generate-shell-completion zsh)"
+fi
 # Use data.omp.theme from chezmoi.toml to set theme
 eval "$(oh-my-posh --init --shell zsh --config /opt/homebrew/opt/oh-my-posh/themes/{{ .omp.theme }}.omp.json)"
 # Don't require escaping globbing characters in zsh.

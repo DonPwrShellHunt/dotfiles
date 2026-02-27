@@ -1,0 +1,7 @@
+# Since pwsh in not a login shell on MacOS, zsh has already run
+# and brew env vars are already set, therefore next cmd not needed
+$(/opt/homebrew/bin/brew shellenv) | Invoke-Expression
+oh-my-posh init pwsh --config "/opt/homebrew/opt/oh-my-posh/themes/{{ .omp.theme }}.omp.json" | Invoke-Expression
+Set-PSReadLineOption -PredictionViewStyle ListView -PredictionSource History
+$env:SSH_AUTH_SOCK = "/Users/donhunt/.1password/agent.sock"
+# Import-Module Posh

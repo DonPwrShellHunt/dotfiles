@@ -4,5 +4,6 @@
 $(/opt/homebrew/bin/brew shellenv) | Invoke-Expression
 oh-my-posh init pwsh --config /opt/homebrew/opt/oh-my-posh/themes/{{ .omp.theme }}.omp.json | Invoke-Expression
 Set-PSReadLineOption -PredictionViewStyle ListView -PredictionSource History
+$mpa = $env:PSModulePath -split [io.path]::PathSeparator
 $env:SSH_AUTH_SOCK = "/Users/donhunt/.1password/agent.sock"
 # Import-Module Posh
